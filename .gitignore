@@ -1,0 +1,44 @@
+# Ignore node_modules
+node_modules/
+jspm_packages/
+*/node_modules/
+**/node_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# dotenv environment variables files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# CDK specific
+cdk.out/
+.cdk.staging
+cdk.context.json
+
+# Build directories
+build/
+dist/
+*/build/
+*/dist/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# React specific
+frontend/build/
+frontend/dist/
+
+# Local development
+.local/
+
+# Debug files
+debug.log
+error.log
