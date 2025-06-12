@@ -1,44 +1,32 @@
-# Twitter-Like App
+# Twitter-Like App 🐦
+A full-stack serverless social media app built with React and AWS (Lambda, API Gateway, DynamoDB). It supports post creation, liking/unliking, and real-time UI updates.
 
-A full-stack serverless social media application built with React frontend and AWS serverless backend. The application provides a complete Twitter-like experience with post creation, retrieval, and user engagement through likes. The backend leverages AWS Lambda, API Gateway, and DynamoDB for scalability, while the frontend uses React with modern component architecture.
+## 🚀 Features
 
-## Features
+Modern React Frontend (components, state, error handling)
 
-- **Full-Stack Application**: Complete frontend and backend integration
-- **React Frontend**: Modern component-based UI with reusable components
-- **Post Management**: Create and retrieve posts with unique IDs, content, and user attribution
-- **User Engagement**: Like/unlike functionality with per-user tracking
-- **Real-time Updates**: Dynamic UI updates for likes and new posts
-- **Error Handling**: Comprehensive error handling with user-friendly alerts
-- **Responsive Design**: Mobile-friendly interface
-- **Serverless Backend**: Zero server management with automatic scaling
-- **RESTful API**: Clean, intuitive endpoints for all operations
-- **Infrastructure as Code**: Fully automated deployment with AWS CDK
-- **Type Safety**: TypeScript-based infrastructure definitions
-- **Testing Suite**: Comprehensive test coverage for both frontend and backend
-- **Cost Optimized**: Pay-per-request pricing model
+AWS Serverless Backend (Lambda, API Gateway, DynamoDB)
 
-## Technologies Used
+User Posts: Create & retrieve with metadata
 
-### Frontend
-- **React** - Component-based UI library
-- **JavaScript/JSX** - Frontend development language
-- **CSS** - Styling and responsive design
-- **Fetch API** - HTTP client for API communication
+Engagement: Like/unlike with per-user tracking
 
-### Backend
-- **AWS CDK** - Infrastructure as Code framework
-- **TypeScript** - Type-safe infrastructure definitions
-- **JavaScript** - Lambda function runtime
-- **AWS Lambda** - Serverless compute functions
-- **Amazon API Gateway** - RESTful API management
-- **Amazon DynamoDB** - NoSQL database for post and like data
-- **AWS IAM** - Security and access management
+Responsive UI: Mobile-friendly and dynamic updates
 
-### Development & Testing
-- **Node.js** - JavaScript runtime environment
-- **Jest** - Testing framework
-- **npm** - Package management
+Infra as Code: Deployed via AWS CDK
+
+Testing: Used Node.js for testing backend
+
+TypeScript CDK stack
+
+Cost-effective: Pay-per-request architecture
+
+## 🛠️ Tech Stack
+Frontend: React, JavaScript, CSS, Fetch API
+
+Backend: AWS Lambda, API Gateway, DynamoDB, IAM, CDK (TypeScript)
+
+Dev Tools: Node.js, npm
 
 ## Project Structure
 
@@ -105,7 +93,7 @@ Before you begin, ensure you have the following installed:
 Configure your AWS credentials using one of these methods:
 
 ```bash
-# Method 1: AWS CLI configure
+# Method 1: AWS CLI configure (it will ask for credentials after that command)
 aws configure
 
 # Method 2: Environment variables
@@ -181,17 +169,12 @@ Add these scripts to your `package.json`:
    npm run build
    ```
 
-2. **Review the changes** (optional)
-   ```bash
-   npm run diff
-   ```
-
-3. **Deploy the backend to AWS**
+2. **Deploy the backend to AWS**
    ```bash
    npm run deploy:backend
    ```
 
-4. **Note the API Gateway URL**
+3. **Note the API Gateway URL**
    After deployment, CDK will output the API Gateway URL:
    ```
    Outputs:
@@ -430,17 +413,8 @@ The stack includes comprehensive observability:
 
 - **CloudWatch Logs** - All Lambda function logs
 - **CloudWatch Metrics** - Request counts, error rates, duration
-- **AWS X-Ray** - Distributed tracing (optional)
 - **API Gateway Metrics** - API performance and usage statistics
 
-## Cost Optimization
-
-This serverless architecture offers several cost benefits:
-
-- **Pay-per-request** pricing for Lambda and API Gateway
-- **On-demand** DynamoDB billing for variable workloads
-- **No idle costs** - resources scale to zero when not in use
-- **Automatic scaling** prevents over-provisioning
 
 ## Cleanup
 
@@ -509,23 +483,7 @@ For local testing of Lambda functions, consider using:
 
 Run all tests:
 ```bash
-npm test
+node {file name}
 ```
-
-Run backend tests only:
-```bash
-npm run test:backend
-```
-
-Run frontend tests only:
-```bash
-npm run test:frontend
-```
-
-### Code Quality
-The project supports:
-- **ESLint** for code linting
-- **Prettier** for code formatting
-- **Jest** for unit testing
-- **TypeScript** strict mode for type safety
+ex: node test-toggleLike.js 
 
